@@ -45,10 +45,11 @@ router.post('/add', [
     if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
     try {
-        let term = await Dictionary.findOne({ definition });
+        const def = definition.toLowerCase();
+        let term = await Dictionary.findOne({ definiton });
         if (term) return res.status(400).json({ errors: [{ msg: 'Term already exists' }] });
 
-        term = await Dictionary.create({ definition, description, completed: true, username, userSocialMedia });
+        term = await Dictionary.create({ definition: def, description, completed: true, username, userSocialMedia });
         res.json(term);
     } catch (err) {
         console.log(err.message);
