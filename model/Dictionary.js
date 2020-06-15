@@ -21,6 +21,10 @@ const dictionarySchema = new mongoose.Schema({
         socialMedia: {
             type: String
         }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 });
 

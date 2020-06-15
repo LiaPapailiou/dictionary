@@ -12,6 +12,8 @@ app.use('/', (req, res) => {
 });
 
 
+app.use('api/terms', require('./routes/dictionary'));
+
 
 
 const PORT = process.env.PORT || 5000;
