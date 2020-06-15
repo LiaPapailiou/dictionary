@@ -7,12 +7,7 @@ connectDB();
 
 app.use(express.json({ extended: false }));
 
-app.use('/', (req, res) => {
-    res.send('Success!');
-});
-
-
-app.use('api/terms', require('./routes/dictionary'));
+app.use('/api/terms', require('./routes/api/dictionary'));
 
 
 
