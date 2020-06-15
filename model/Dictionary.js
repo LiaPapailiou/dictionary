@@ -13,15 +13,14 @@ const dictionarySchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
-    user: {
-        name: {
-            type: String,
-            required: true
-        },
-        socialMedia: {
-            type: String
-        }
+    username: {
+        type: String,
+        required: true
     },
+    userSocialMedia: {
+        type: String
+    },
+
     createdAt: {
         type: Date,
         default: Date.now

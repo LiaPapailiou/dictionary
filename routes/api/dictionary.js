@@ -34,13 +34,13 @@ router.get('/:term', async (req, res) => {
 router.post('/add', [
     check('definition', 'Term definition is required').not().isEmpty(),
     check('description', 'Term description is required').not().isEmpty(),
-    check('name', 'Name is required').not().isEmpty(),
+    check('username', 'Name is required').not().isEmpty(),
 ], async (req, res) => {
     const {
         definition,
         description,
-        "user.name": name,
-        "user.socialMedia": socialMedia
+        username,
+        userSocialMedia
     } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -50,7 +50,7 @@ router.post('/add', [
         let term = await Dictionary.findOne({ definition });
         if (term) return res.status(400).json({ errors: [{ msg: 'Term already exists' }] });
 
-        term = await Dictionary.insertOne({ definition, description, completed: true, name, socialMedia });
+        term = await Dictionary.create({ definition, description, completed: true, username, userSocialMedia });
         res.json(term);
     } catch (err) {
         console.log(err.message);
