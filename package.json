@@ -1,0 +1,37 @@
+{
+  "name": "dictionary",
+  "version": "1.0.0",
+  "description": "A social media term dictionary (MVP)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "pretest": "npm run lint",
+    "test": "mocha ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiaPapailiou/dictionary.git"
+  },
+  "author": "Lia Papailiou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LiaPapailiou/dictionary/issues"
+  },
+  "homepage": "https://github.com/LiaPapailiou/dictionary#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mocha": "^8.0.1",
+    "mongoose": "^5.9.18",
+    "node": "^14.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-mocha": "^7.0.1",
+    "nodemon": "^2.0.4"
+  }
+}
