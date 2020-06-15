@@ -1,4 +1,4 @@
-# A social media term dictionary (MVP)
+# A digital dictionary (MVP)
 
 ## Installation
 
