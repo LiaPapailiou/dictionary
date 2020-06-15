@@ -19,8 +19,7 @@ router.get('/', async (req, res) => {
 // Get one by term
 router.get('/:term', async (req, res) => {
     try {
-        const def = req.params.term;
-        const term = await Dictionary.findOne({ definition: def.toLowerCase() });
+        const term = await Dictionary.findOne({ definition: req.params.term });
         if (!term) return res.status(400).json({ msg: 'Term not found' });
         res.json(term);
 
@@ -43,9 +42,8 @@ router.post('/add', [
         userSocialMedia
     } = req.body;
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
     try {
         let term = await Dictionary.findOne({ definition });
         if (term) return res.status(400).json({ errors: [{ msg: 'Term already exists' }] });
