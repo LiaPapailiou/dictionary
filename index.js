@@ -7,7 +7,9 @@ connectDB();
 
 app.use(express.json({ extended: false }));
 
-
+app.use('/', (req, res) => {
+    res.send('Success!');
+});
 
 
 
