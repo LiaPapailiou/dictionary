@@ -16,10 +16,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get one by term (to lower case)
+// Get one by term
 router.get('/:term', async (req, res) => {
     try {
-        const term = await Dictionary.findOne({ definition: req.params.term });
+        const def = req.params.term;
+        const term = await Dictionary.findOne({ definition: def.toLowerCase() });
         if (!term) return res.status(400).json({ msg: 'Term not found' });
         res.json(term);
 
@@ -31,8 +32,8 @@ router.get('/:term', async (req, res) => {
 
 // Insert one 
 router.post('/add', [
-    check('definition', 'Term definition is required').exists(),
-    check('description', 'Term description is required').exists(),
+    check('definition', 'Term definition is required').not().isEmpty(),
+    check('description', 'Term description is required').not().isEmpty(),
     check('name', 'Name is required').not().isEmpty(),
 ], async (req, res) => {
     const {
