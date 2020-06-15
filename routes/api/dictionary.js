@@ -48,12 +48,10 @@ router.post('/add', [
     }
     try {
         let term = await Dictionary.findOne({ definition });
+        if (term) return res.status(400).json({ errors: [{ msg: 'Term already exists' }] });
 
-        if (term) {
-            return res.status(400).json({ errors: [{ msg: 'Term already exists' }] });
-        }
-        term = new Dictionary({ definition, description, completed: true, name, socialMedia });
-        await term.save();
+        term = await Dictionary.insertOne({ definition, description, completed: true, name, socialMedia });
+        res.json(term);
     } catch (err) {
         console.log(err.message);
         res.status(500).send('Server Error');
