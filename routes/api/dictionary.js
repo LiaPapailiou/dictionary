@@ -5,6 +5,16 @@ const { check, validationResult } = require('express-validator');
 
 const Dictionary = require('../../model/Dictionary');
 
+// Render add-term form view
+router.get('/add', (req, res) => {
+    res.render('addTerm', { style: 'style' });
+})
+
+// Render find-term input view
+router.get('/find', (req, res) => {
+    res.render('term', { style: 'style' });
+})
+
 // Get many - limit results to 10
 router.get('/', async (req, res) => {
     try {
@@ -18,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get one by term
-router.get('/:term', async (req, res) => {
+router.get('/find/:term', async (req, res) => {
     try {
         const term = await Dictionary.findOne({ definition: req.params.term });
         if (!term) return res.status(404).json({ msg: 'Term not found' });
@@ -30,7 +40,7 @@ router.get('/:term', async (req, res) => {
     }
 })
 
-// Insert one 
+// Insert one term
 router.post('/add', [
     check('definition', 'Term definition is required').not().isEmpty(),
     check('description', 'Term description is required').not().isEmpty(),
