@@ -9,9 +9,10 @@ const Dictionary = require('../../model/Dictionary');
 // Get many - limit results to 10
 router.get('/', async (req, res) => {
     try {
-        const terms = await Dictionary.find().limit(10);
-        if (!terms) return res.status(404).json({ msg: 'There are no terms currently in the database' });
-        res.json(terms);
+        const terms = await Dictionary.find().limit(10).lean();
+        if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database' });
+        // res.json(terms);
+        res.render('terms', { terms });
     } catch (err) {
         res.status(500).send('Server Error');
     }
@@ -22,7 +23,7 @@ router.get('/:term', async (req, res) => {
     try {
         const term = await Dictionary.findOne({ definition: req.params.term });
         if (!term) return res.status(404).json({ msg: 'Term not found' });
-        res.json(term);
+        res.render(term);
 
     } catch (err) {
         console.log(err.message);
