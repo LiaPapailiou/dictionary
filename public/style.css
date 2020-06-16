@@ -1,4 +1,15 @@
 h1 {
     font-size: 40px;
-    color: lightcoral;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: lightgrey;
+}
+
+li {
+    display: inline;
+    padding-left: 15px;
 }
