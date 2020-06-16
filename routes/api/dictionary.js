@@ -22,7 +22,7 @@ router.get('/:term', async (req, res) => {
     try {
         const term = await Dictionary.findOne({ definition: req.params.term });
         if (!term) return res.status(404).json({ msg: 'Term not found' });
-        res.render(term);
+        res.json(term);
 
     } catch (err) {
         console.log(err.message);

@@ -1,4 +1,5 @@
 const btn = document.querySelector('button[type="submit"]');
+const btnFind = document.querySelector('input[type="submit"]');
 
 async function handleClick(e) {
     e.preventDefault();
@@ -21,6 +22,21 @@ async function handleClick(e) {
         })
     });
     await result.json();
-
 }
+
+async function search(e) {
+    e.preventDefault();
+    const term = document.querySelector('input[name="term"]').value.trim();
+    const result = await fetch(`http://localhost:5000/api/terms/${term}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
+    const res = await result.json();
+    console.log(res);
+}
+
 btn.addEventListener('click', handleClick);
+btnFind.addEventListener('click', search);

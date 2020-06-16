@@ -1,6 +1,6 @@
 .container-terms {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: start;
     align-content: flex-start;
@@ -9,5 +9,14 @@
 
 h1 {
     margin-bottom: 20px;
+}
+
+span {
+    font-size: 10px;
+    color: lightslategray;
+}
+
+.terms {
+    margin-bottom: 15px;
 }
 
