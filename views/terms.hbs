@@ -1,6 +1,15 @@
-<h1>All terms</h1>
+{{> header}}
+<div class="container">
+    <h1>All terms</h1>
+    <div class="terms">
+        {{#each terms}}
+        <div class="term-list">
+            <h3>{{definition}}</h3>
+            <p>{{ description}}</p>
+        </div>
+        {{/each}}
+    </div>
 
-{{#each terms}}
-<h3>{{definition}}</h3>
-<p>{{ description}}</p>
-{{/each}}
+</div>
+
+{{> footer}}

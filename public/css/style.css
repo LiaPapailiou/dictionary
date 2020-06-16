@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: flex-start;
+    background-color: #e5e4e2;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+

@@ -15,18 +15,12 @@ app.engine('.hbs', handlebars({
     extname: 'hbs',
     defaultLayout: 'main',
     partialsDir: `${__dirname}/views/partials`,
-    allowedProtoMethods: true
 }));
 app.set('view engine', '.hbs');
 
 // Middleware
 app.use(express.json({ extended: false }));
 
-
-
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Digital Dictionary - Home', name: 'This is a digital dictionary' });
-})
 
 app.use('/api/terms', routes);
 
