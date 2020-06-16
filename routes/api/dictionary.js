@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     try {
         const terms = await Dictionary.find().limit(10).lean();
         if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database' });
-        // res.json(terms);
+
         res.render('terms', { terms, style: 'style' });
     } catch (err) {
         res.status(500).send('Server Error');

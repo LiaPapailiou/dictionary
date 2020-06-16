@@ -7,10 +7,11 @@
             <button type="submit" class="btn btn-primary">Find</button>
         </div>
     </form>
-    {{#if completed}}
+    {{#unless completed}}
+    <h1>Term not found in the dictionary</h1>
+    {{/unless}}
     <h3>{{definition}}</h3>
     <p>{{ description}}</p>
     <span>{{username}}</span>
-    {{#if}}
 </div>
 {{> footer}}
