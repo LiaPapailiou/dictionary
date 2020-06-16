@@ -20,7 +20,7 @@ async function handleClick(e) {
             userSocialMedia
         })
     });
-    const content = await result.json();
+    await result.json();
 
 }
 btn.addEventListener('click', handleClick);
