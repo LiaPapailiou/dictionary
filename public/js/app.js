@@ -40,3 +40,4 @@ async function search(e) {
 
 btn.addEventListener('click', handleClick);
 btnFind.addEventListener('click', search);
+
