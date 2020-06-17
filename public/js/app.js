@@ -53,6 +53,5 @@ async function search(e) {
     }
 }
 
-btn.addEventListener('click', handleClick);
-btnFind.addEventListener('click', search);
-
+if (btn) btn.addEventListener('click', handleClick);
+if (btnFind) btnFind.addEventListener('click', search);
