@@ -10,7 +10,7 @@ async function handleClick(e) {
     const userSocialMedia = document.querySelector('.add-social-media').value.trim();
 
     try {
-        const result = await fetch('http://localhost:5000/api/terms/add', {
+        const result = await fetch('/api/terms/add', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -35,7 +35,7 @@ async function search(e) {
     e.preventDefault();
     try {
         const term = document.querySelector('input[name="term"]').value.trim();
-        const result = await fetch(`http://localhost:5000/api/terms/find/${term}`, {
+        const result = await fetch(`/api/terms/find/${term}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ async function search(e) {
             }
         });
         const res = await result.json();
-        console.log(res);
+        // console.log(res);
     } catch (err) {
         console.log(err);
     }
