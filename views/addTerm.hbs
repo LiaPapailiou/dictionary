@@ -1,16 +1,15 @@
-{{>header}}
 <div class="container-add-term">
     <h1>Add a Term</h1>
-    <form>
+    <form id="add-form">
         <div class="add-term">
             <input type="text" required placeholder="Definition..." class="add-definition" name="definition">
             <textarea required placeholder="Description..." class="add-description" rows="8" cols="100"
                 name="description">
             </textarea>
-            <input type="text" required placeholder="Name..." class="add-name" name="username">
-            <input type="text" placeholder="Add social media (optional)" class="add-socialMedia" name="userSocialMedia">
+            <input type="text" required placeholder="Add your name..." class="add-name" name="username">
+            <input type="text" placeholder="Add social media (optional)" class="add-social-media"
+                name="userSocialMedia">
         </div>
         <button type="submit" class="add-term-btn">Add Term</button>
     </form>
 </div>
-{{>footer}}

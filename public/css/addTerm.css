@@ -1,0 +1,13 @@
+.container-add-term {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.add-term{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

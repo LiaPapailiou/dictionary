@@ -1,12 +1,13 @@
 const btn = document.querySelector('.add-term-btn');
 const btnFind = document.querySelector('.find-term-btn');
 
+
 async function handleClick(e) {
     e.preventDefault();
-    const definition = document.querySelector('input[name="definition"]').value.trim();
-    const description = document.querySelector('textarea[name="description"]').value.trim();
-    const username = document.querySelector('input[name="username"]').value.trim();
-    const userSocialMedia = document.querySelector('input[name="userSocialMedia"]').value.trim();
+    const definition = document.querySelector('.add-definition').value.trim();
+    const description = document.querySelector('.add-description').value.trim();
+    const username = document.querySelector('.add-name').value.trim();
+    const userSocialMedia = document.querySelector('.add-social-media').value.trim();
 
     const result = await fetch('http://localhost:5000/api/terms/add', {
         method: 'POST',
@@ -22,6 +23,7 @@ async function handleClick(e) {
         })
     });
     await result.json();
+    document.getElementById('add-form').reset();
 }
 
 async function search(e) {

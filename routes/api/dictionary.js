@@ -7,7 +7,7 @@ const Dictionary = require('../../model/Dictionary');
 
 // Render add-term form view
 router.get('/add', (req, res) => {
-    res.render('addTerm', { style: 'style' });
+    res.render('addTerm', { style: 'addTerm' });
 });
 
 // Render find-term input view
@@ -19,7 +19,7 @@ router.get('/find', (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const terms = await Dictionary.find({ approved: true }).limit(10).lean();
-        if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database' });
+        if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database or no terms have been approved' });
 
         res.render('terms', { terms, style: 'style' });
     } catch (err) {
