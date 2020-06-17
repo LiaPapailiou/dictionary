@@ -34,7 +34,7 @@ async function handleClick(e) {
 async function search(e) {
     e.preventDefault();
     try {
-        const term = document.querySelector('input[name="term"]').value.trim();
+        const term = document.querySelector('.find-single-term').value.trim();
         const result = await fetch(`/api/terms/find/${term}`, {
             method: 'GET',
             headers: {
@@ -43,7 +43,11 @@ async function search(e) {
             }
         });
         const res = await result.json();
-        // console.log(res);
+        document.getElementById('find-form').reset();
+        console.log(res);
+        // if (res) {
+        //     window.location.replace(`/api/terms/find`);
+        // }
     } catch (err) {
         console.log(err);
     }

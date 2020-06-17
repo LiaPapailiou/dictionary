@@ -6,6 +6,26 @@
     align-content: center;
     background-color: #e5e4e2;
 }
+.container-find-term {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #e5e4e2;
+}
+
+.find-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.find-term {
+    max-width: 300px;
+}
 
 h1 {
     margin-bottom: 20px;

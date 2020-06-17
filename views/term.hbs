@@ -1,17 +1,12 @@
 {{> header}}
 <div class="container-single-term">
-    <h1>Find a term</h1>
-    <form>
-        <div class="find-term">
-            <input type="text" required placeholder="Search..." class="find-term" name="term">
-        </div>
-        <button type="submit" class="find-term-btn">Find</button>
-    </form>
+    <h1>Hello</h1>
     {{#if term}}
-    <h1>Term not found in the dictionary</h1>
+    <div class="term">
+        <h3>{{definition}}</h3>
+        <p>{{ description}}</p>
+        <span>Added by {{username}} on {{createdAt}}</span>
+    </div>
     {{/if}}
-    <h3>{{definition}}</h3>
-    <p>{{ description}}</p>
-    <span>{{username}}</span>
 </div>
 {{> footer}}
