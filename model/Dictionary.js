@@ -9,7 +9,7 @@ const dictionarySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    completed: {
+    approved: {
         type: Boolean,
         required: true
     },
