@@ -11,3 +11,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+.alerts {
+    max-width: 500px;
+}
