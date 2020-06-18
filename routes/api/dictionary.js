@@ -10,11 +10,6 @@ router.get('/add', (req, res) => {
     res.render('addTerm', { style: 'addTerm' });
 });
 
-// Render find-term input view
-// router.get('/find', (req, res) => {
-//     res.render('term', { term, style: 'style' });
-// });
-
 // Get many - limit results to 10
 router.get('/', async (req, res) => {
     try {
@@ -32,7 +27,6 @@ router.get('/find/:term', async (req, res) => {
         const term = await Dictionary.find({ definition: req.params.term }).lean();
         if (!term) return res.status(404).json({ msg: 'Term not found' });
         res.render('term', { term, approved: true, style: 'style' });
-        // res.json(term);
 
     } catch (err) {
         res.status(500).send('Server Error');

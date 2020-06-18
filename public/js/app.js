@@ -44,7 +44,7 @@ async function search(e) {
             }
         });
 
-        const res = await JSON.parse(JSON.stringify(result));
+        await JSON.parse(JSON.stringify(result));
         document.getElementById('find-form').reset();
         if (res) {
             window.location.replace(`/api/terms/find/${sanitized}`);
