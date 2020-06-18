@@ -1,13 +1,15 @@
 {{> header}}
 <div class="container-single-term">
-    {{#if term}}
+    {{#each term}}
     <div class="term">
-        <h3>{{definition}}</h3>
-        <p>{{ description}}</p>
-        <span>Added by {{username}} on {{createdAt}}</span>
+        {{#if approved}}
+        <h3>{{this.definition}}</h3>
+        <p>{{ this.description}}</p>
+        <span>Added by {{this.username}} on {{this.createdAt}}</span>
     </div>
     {{else}}
     <p>The term does not exist in the database or it is currently pending for approval</p>
     {{/if}}
+    {{/each}}
 </div>
 {{> footer}}

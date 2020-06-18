@@ -39,14 +39,13 @@ async function search(e) {
         const result = await fetch(`/api/terms/find/${sanitized}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
+                'Content-Type': 'text/html',
+                'Accept': 'text/html',
             }
         });
-        // const resText = await result.text();
-        // const res = await JSON.stringify(result);
-        const res = await result.json();
-        console.log(res);
+        const resText = await result.text();
+        // const res = await JSON.parse(JSON.stringify(result));
+        console.log(JSON.stringify(result));
         document.getElementById('find-form').reset();
         // if (res) {
         //     window.location.replace(`/api/terms/find/`);
