@@ -11,9 +11,9 @@ router.get('/add', (req, res) => {
 });
 
 // Render find-term input view
-router.get('/find', (req, res) => {
-    res.render('term', { term, style: 'style' });
-});
+// router.get('/find', (req, res) => {
+//     res.render('term', { term, style: 'style' });
+// });
 
 // Get many - limit results to 10
 router.get('/', async (req, res) => {

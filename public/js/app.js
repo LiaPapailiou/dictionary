@@ -43,13 +43,12 @@ async function search(e) {
                 'Accept': 'text/html',
             }
         });
-        const resText = await result.text();
-        // const res = await JSON.parse(JSON.stringify(result));
-        console.log(JSON.stringify(result));
+
+        const res = await JSON.parse(JSON.stringify(result));
         document.getElementById('find-form').reset();
-        // if (res) {
-        //     window.location.replace(`/api/terms/find/`);
-        // }
+        if (res) {
+            window.location.replace(`/api/terms/find/${sanitized}`);
+        }
     } catch (err) {
         console.log(err);
     }
