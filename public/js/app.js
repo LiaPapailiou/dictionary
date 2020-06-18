@@ -34,19 +34,22 @@ async function handleClick(e) {
 async function search(e) {
     e.preventDefault();
     try {
-        const term = document.querySelector('.find-single-term').value.trim();
-        const result = await fetch(`/api/terms/find/${term}`, {
+        let term = document.querySelector('.find-single-term').value.trim();
+        const sanitized = term.replace(term.charAt(0), term.charAt(0).toUpperCase());
+        const result = await fetch(`/api/terms/find/${sanitized}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
             }
         });
+        // const resText = await result.text();
+        // const res = await JSON.stringify(result);
         const res = await result.json();
-        document.getElementById('find-form').reset();
         console.log(res);
+        document.getElementById('find-form').reset();
         // if (res) {
-        //     window.location.replace(`/api/terms/find`);
+        //     window.location.replace(`/api/terms/find/`);
         // }
     } catch (err) {
         console.log(err);

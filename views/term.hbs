@@ -1,12 +1,13 @@
 {{> header}}
 <div class="container-single-term">
-    <h1>Hello</h1>
     {{#if term}}
     <div class="term">
         <h3>{{definition}}</h3>
         <p>{{ description}}</p>
         <span>Added by {{username}} on {{createdAt}}</span>
     </div>
+    {{else}}
+    <p>The term does not exist in the database or it is currently pending for approval</p>
     {{/if}}
 </div>
 {{> footer}}

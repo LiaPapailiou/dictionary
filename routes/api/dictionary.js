@@ -12,7 +12,7 @@ router.get('/add', (req, res) => {
 
 // Render find-term input view
 router.get('/find', (req, res) => {
-    res.render('term', { style: 'style' });
+    res.render('term', { term, style: 'style' });
 });
 
 // Get many - limit results to 10
@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
     try {
         const terms = await Dictionary.find({ approved: true }).limit(10).lean();
         if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database or no terms have been approved' });
-
         res.render('terms', { terms, style: 'style' });
     } catch (err) {
         res.status(500).send('Server Error');
@@ -30,13 +29,11 @@ router.get('/', async (req, res) => {
 // Get one by term
 router.get('/find/:term', async (req, res) => {
     try {
-        const term = await Dictionary.findOne({ definition: req.params.term });
+        const term = await Dictionary.findOne({ definition: req.params.term }).lean();
         if (!term) return res.status(404).json({ msg: 'Term not found' });
-        // res.render('term', { term, style: 'style' });
         res.json(term);
 
     } catch (err) {
-        console.log(err.message);
         res.status(500).send('Server Error');
     }
 })
