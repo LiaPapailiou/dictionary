@@ -25,7 +25,7 @@ app.use('/api/terms', routes);
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('public'));
   app.get('/', (req, res) => {
-    res.render('terms.hbs');
+    res.render('layouts/main.hbs');
   });
 }
 
