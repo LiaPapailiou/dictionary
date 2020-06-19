@@ -9,7 +9,6 @@ const app = express();
 connectDB();
 app.use(express.static('public'));
 
-// Configure express-handlebars
 app.engine('.hbs', handlebars({
   layoutsDir: `${__dirname}/views/layouts`,
   extname: 'hbs',
@@ -19,7 +18,6 @@ app.engine('.hbs', handlebars({
 app.set('view engine', '.hbs');
 app.set('views', path.resolve(__dirname, 'views'));
 
-// Middleware
 app.use(express.json({ extended: false }));
 
 app.use('/api/terms', routes);
