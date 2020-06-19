@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
   try {
     const terms = await Dictionary.find({ approved: true }).limit(10).lean();
     if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database or no terms have been approved' });
+    // terms.map((term) =>  console.log(term.createdAt.toUTCString()));
     res.render('terms', { terms, style: 'style' });
   } catch (err) {
     res.status(500).json({ msg: 'Server Error' });
