@@ -1,5 +1,4 @@
-{{> header}}
-<div class="container-find-term">
+{{!-- <div class="container-find-term">
     <h3>Find a term</h3>
     <form id="find-form">
         <div class="find-term">
@@ -7,17 +6,18 @@
         </div>
         <button type="submit" class="find-term-btn">Find</button>
     </form>
-</div>
+</div> --}}
 <div class="container-terms">
-    <h1>All terms</h1>
+    <div class="options">
+<a href="/api/terms">Find all words</a>
+<a href="/api/terms/add">Create a word</a>
+    </div>
     <div class="terms">
         {{#each terms}}
-        <div class="term-list">
+          <div class="term-list">
             <h3>{{definition}}</h3>
             <p>{{ description}}</p>
-            <span>Added by {{username}} on {{createdAt}}</span>
-        </div>
+        </div>  
         {{/each}}
     </div>
 </div>
-{{> footer}}
