@@ -56,19 +56,43 @@
 	border-radius: 50%;
 	width: 160px;
 	height: 160px;
-    z-index: 86;
+    z-index: 1;
     float: left;
     margin-left: 20px;
+    position: fixed;
 }
 
 .home a {
     color: #6865cd;
+    font-size: 20px;
     font-family: 'Space Mono', monospace;
     text-decoration: none;
+    margin-left: 80px;
+    position: relative;
+    top: 85px;
 }
 
 .home a:hover {
      color:#00A0C6; 
      text-decoration:none; 
      cursor:pointer;  
+}
+
+.home-cross {
+    background: #6865cd;
+    width: 5px;
+    height: 40px;
+    position: absolute;
+    margin-left: 50px;
+}
+
+.home-cross:after {
+    background: #6865cd;
+    content: "";
+    height: 5px;
+    left: -30px;
+    position: absolute;
+    top: 17px;
+    width: 40px;
+    margin-left: 12px;
 }
