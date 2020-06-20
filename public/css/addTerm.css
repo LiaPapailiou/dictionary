@@ -26,11 +26,13 @@
     height: 30px;
     border-radius: 10px;
     margin-bottom: 15px;
+    border-width: 1px;
 }
 
 .add-definition {
     margin-top: 30px;
     border-radius: 10px;
+    border-width: 1px;
 }
 
 .add-description {
@@ -40,9 +42,33 @@
 .add-name {
     border-radius: 10px;
     margin-bottom: 5px;
+    border-width: 1px;
 }
 
 .add-social-media {
     border-radius: 10px;
     margin-bottom: 5px;
+    border-width: 1px;
+}
+
+.home {
+	border: 6px solid  #6865cd;
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+    z-index: 86;
+    float: left;
+    margin-left: 20px;
+}
+
+.home a {
+    color: #6865cd;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+}
+
+.home a:hover {
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
 }
