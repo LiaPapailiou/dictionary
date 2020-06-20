@@ -9,25 +9,6 @@
     align-content: center;
     font-family: 'Space Mono', monospace;
 }
-.container-find-term {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-}
-
-.find-form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-}
-
-.find-term {
-    max-width: 300px;
-}
 
 .terms {
     margin-bottom: 15px;
@@ -37,36 +18,40 @@
 }
 
 .term-list {
-    padding-top: 30px;
+    /* padding-top: 30px;
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 30px;
+    max-height: 300px; */
     max-width: 400px;
-    max-height: 300px;
     margin-bottom: 40px;
     background-color: #b3d1c8;
 }
 
 .term-list p {
     font-family: 'Roboto Mono', monospace;
-    font-weight: 800;
     font-size: 12px;
     padding-inline-start: 10px;
-    color: #6865cd;
 }
 
 .term-list h3 {
     font-family: 'Space Mono', monospace;
-    padding-inline-start: 10px;
     font-size: 26px;
-    color: #6865cd;
 }
-
+.term-list h4 {
+    visibility: hidden;
+}
 .term-list:first-child {
     background-color: #e66c44;
 }
 .term-list:first-child h3{
     color: #efe7de;
+}
+.term-list:first-child h4{
+    visibility: visible;
+    color: #efe7de;
+    font-size: 16px;
+    padding-left: 10px;
 }
 .term-list:first-child p{
     color: #efe7de;
@@ -78,6 +63,7 @@
 .term-list:last-child h3{
     color: #b3d1c8;
 }
+
 .term-list:last-child p{
     color: #b3d1c8;
 }
@@ -88,6 +74,17 @@
 .term-list:nth-child(3) h3{
     color: #efe7de;
 }
+
 .term-list:nth-child(3) p{
     color: #efe7de;
+}
+
+.term-list:nth-child(2) {
+    background-color: #b3d1c8;
+}
+.term-list:nth-child(2) h3{
+    color: #6865cd;
+}
+.term-list:nth-child(2) p{
+    color: #6865cd;
 }
