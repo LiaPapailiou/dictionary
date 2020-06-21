@@ -8,14 +8,6 @@
     </form>
 </div> --}}
 <div class="container-terms">
-    <div class="item-a">
-        <a href="#">Join a workshop</a>
-        <div class="item-a-cross"></div>
-    </div>
-<div class="item-b">
-    <a href="/api/terms/add">Create a word</a>
-    <div class="item-b-cross"></div>
-</div>
     <div class="terms">
         {{#each terms}}
           <div class="term-list">
@@ -24,8 +16,13 @@
             <p>{{ description}}</p>
         </div>  
         {{/each}}
+        <div class="item-a">
+        <a href="#">Join a workshop</a>
+        <div class="item-a-cross"></div>
     </div>
-</div>
-<div class="add">
-
+    <div class="item-b">
+        <a href="/api/terms/add">Create a word</a>
+        <div class="item-b-arrow"></div>
+    </div>
+    </div>
 </div>
