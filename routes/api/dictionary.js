@@ -36,6 +36,8 @@ router.post('/add', [
 ], async (req, res) => {
   const {
     definition,
+    termType,
+    phoneticSpelling,
     description,
     username,
     userSocialMedia,
@@ -48,6 +50,8 @@ router.post('/add', [
 
     term = await Dictionary.create({
       definition,
+      termType,
+      phoneticSpelling,
       description,
       approved: false,
       username,

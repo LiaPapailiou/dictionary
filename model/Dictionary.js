@@ -5,6 +5,12 @@ const dictionarySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  termType: {
+    type: String,
+  },
+  phoneticSpelling: {
+    type: String,
+  },
   description: {
     type: String,
     required: true,

@@ -23,10 +23,9 @@ app.use(express.json({ extended: false }));
 app.use('/api/terms', routes);
 
 if (process.env.NODE_ENV === 'production') {
-  const hideUrl = `/api/terms`;
   app.use(express.static('public'));
   app.get('/', (req, res) => {
-    res.redirect(`${hideUrl}`);
+    res.redirect('/api/terms');
   });
 }
 
