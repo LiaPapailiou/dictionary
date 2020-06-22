@@ -44,6 +44,7 @@
 .term-list:first-child {
     background-color: #e66c44;
     width: 380px;
+    height: 190px;
     border-style: solid;
     border-width: thin;
     border-color: #efe7de;

@@ -9,7 +9,7 @@ async function handleClick(e) {
   const userSocialMedia = document.querySelector('.add-social-media').value.trim();
 
   try {
-    const result = await fetch('/api/terms/add', {
+    const result = await fetch('/terms/add', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -34,7 +34,7 @@ async function search(e) {
   try {
     const term = document.querySelector('.find-single-term').value.trim();
     const sanitized = term.replace(term.charAt(0), term.charAt(0).toUpperCase());
-    const result = await fetch(`/api/terms/find/${sanitized}`, {
+    const result = await fetch(`/terms/find/${sanitized}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'text/html',
@@ -45,7 +45,7 @@ async function search(e) {
     const res = await JSON.parse(JSON.stringify(result));
     document.getElementById('find-form').reset();
     if (res) {
-      window.location.replace(`/api/terms/find/${sanitized}`);
+      window.location.replace(`/terms/find/${sanitized}`);
     }
   } catch (err) {
     console.log(err);

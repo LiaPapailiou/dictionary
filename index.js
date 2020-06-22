@@ -20,12 +20,12 @@ app.set('views', path.resolve(__dirname, 'views'));
 
 app.use(express.json({ extended: false }));
 
-app.use('/api/terms', routes);
+app.use('/terms', routes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('public'));
   app.get('/', (req, res) => {
-    res.redirect('/api/terms');
+    res.redirect('/terms');
   });
 }
 
