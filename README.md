@@ -18,7 +18,7 @@ Data Anticipation //incorrect
 #### Application 
 
 ```bash
-https://digital-dictionary.herokuapp.com/terms
+https://digital-dictionary.herokuapp.com
 ```
 
 ##### Browser Compatibility
