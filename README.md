@@ -12,7 +12,15 @@ npm install
 Words are approved by the DB admin before they become visible. The correct format would be to capitalize the first char. For example: 
 ```bash
 Anecdoche //correct
-Data Anticipation //incorrect
 Data anticipation //correct
+Data Anticipation //incorrect
 ```
-The reason being is that entering mispelled words would yield incorrect results
+#### Application 
+
+```bash
+https://digital-dictionary.herokuapp.com/terms
+```
+
+##### Browser Compatibility
+
+The application is compatible with Chrome, Firefox, IE 10+, Edge, Safari & Safari iOS
