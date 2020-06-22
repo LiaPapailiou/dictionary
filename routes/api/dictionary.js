@@ -10,9 +10,27 @@ router.get('/add', (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
+    // const page = parseInt(req.query.page);
+    // const limit = parseInt(req.query.limit);
+    // const startIdx = (page - 1) * limit;
+    // const endIdx = page * limit;
+
+    // const results = {};
+    // if (endIdx < await Dictionary.countDocuments().exec()) {
+    //   results.next = {
+    //     page: page + 1,
+    //     limit,
+    //   },
+    // }
+    // if (startIdx > 0) {
+    //   results.previous = {
+    //     page: page - 1,
+    //     limit,
+    //   },
+    // }
     const terms = await Dictionary.find({ approved: true }).limit(5).lean();
     if (!terms) return res.status(404).json({ msg: 'There are currently no terms in the database or no terms have been approved' });
-    // terms.map((term) =>  console.log(term.createdAt.toUTCString()));
+ 
     res.render('terms', { terms, style: 'style' });
   } catch (err) {
     res.status(500).json({ msg: 'Server Error' });
