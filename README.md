@@ -23,4 +23,4 @@ https://digital-dictionary.herokuapp.com
 
 ## Browser Compatibility
 
-The application is compatible with Chrome, Firefox, IE 10+, Edge, Safari & Safari iOS
+The application, in its current state, is compatible with Chrome, Firefox, IE 10+, Edge, Safari. 
