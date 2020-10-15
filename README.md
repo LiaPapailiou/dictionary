@@ -16,6 +16,7 @@ This project is created with:
 * Nodejs
 * Express
 * Handlebars
+* Fetch API
 
 ## Setup
 
