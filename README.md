@@ -2,6 +2,7 @@
 ## Table of Contents
 * [General Info](#General-Info)
 * [Technologies](#Technologies)
+* [To Do](#To-Do)
 * [Setup](#Setup)
 * [Screenshots](#Screenshots)
 * [Notes](#Notes)
@@ -18,13 +19,16 @@ This project is created with:
 * Handlebars
 * Fetch API
 
+## To Do
+* Add pagination and horizontal scroll
+* Make a route for "find term"
+
 ## Setup
 
 Use npm to install
 ```bash
 npm install
 ```
-
 
 ## Screenshots
 This is how the web applicaton looks after adding exercises and clients to the database.
@@ -46,7 +50,3 @@ Here is a live demo.
 ```bash
 https://digital-dictionary.herokuapp.com
 ```
-
-
-
-
