@@ -18,6 +18,7 @@ This project is created with:
 * Express
 * Handlebars
 * Fetch API
+* CSS Grid
 
 ## To Do
 * Add pagination and horizontal scroll
